@@ -49,5 +49,12 @@ rick = 1
 for e in dumb:
      d = ws1.cell(row = rick, column = 1, value = e)
      rick+=2
+dims = {}
+for row in ws1.rows:
+    for cell in row:
+        if cell.value:
+            dims[cell.column] = max((dims.get(cell.column, 0), len(cell.value)))
+for col, value in dims.items():
+    ws1.column_dimensions[col].width = value
 
 wb.save(filename = dest_filename)
