@@ -1,8 +1,12 @@
+
+
 run = True
 stupid = True
 dumb = []
 connum = 1
 subnum = 97
+side = raw_input("What side?")
+dumb.append(side)
 while(run == True):
 	var = raw_input("Contention = a, Subpoint = s, Evidence = d, Misc = f, Stop = end ")
 		
@@ -58,3 +62,4 @@ for col, value in dims.items():
     ws1.column_dimensions[col].width = value
 
 wb.save(filename = dest_filename)
+
